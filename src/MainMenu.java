@@ -43,6 +43,7 @@ public class MainMenu {
         if(input.equals("1"))
             leagueManager.listPlayers();
         else if (input.equals("2")) {
+            printStream.println("Enter a player name: ");
             String search = getUserInput(reader);
             leagueManager.findPlayer(search);
         }

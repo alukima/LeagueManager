@@ -18,6 +18,7 @@ public class LeagueManagerTest {
         leagueManager = new LeagueManager(printStream);
         leagueManager.createRoster();
     }
+
     @Test
     public void shouldPrintAllPlayers() throws IOException {
         leagueManager.listPlayers();

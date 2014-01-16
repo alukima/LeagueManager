@@ -18,6 +18,7 @@ public class LeagueManager {
         InputReader inputReader = new InputReader(reader, printStream);
         roster = inputReader.getRoster();
     }
+
     public void listPlayers() {
         for(Player player: roster){
             printStream.print(roster.size());
@@ -26,10 +27,9 @@ public class LeagueManager {
     }
 
     public void findPlayer(String line) {
-        for(Player player: roster){
-            if(player.name == line);{
-            printStream.println(player.toString());
+        for(Player player : roster)
+            if (player.name.equals(line)){
+                printStream.println(player.toString());
             }
-        }
     }
 }
