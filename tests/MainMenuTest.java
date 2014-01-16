@@ -1,7 +1,6 @@
+import org.junit.Before;
 import org.junit.Test;
 
-import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.PrintStream;
 
 import static org.mockito.Mockito.mock;
@@ -12,20 +11,17 @@ public class MainMenuTest {
     private MainMenu mainMenu;
     private PrintStream printStream;
 
+    @Before
+    public void setUp(){
+        printStream = mock(PrintStream.class);
+        mainMenu = new MainMenu(printStream);
+    }
+
     @Test
     public void shouldShowMenuOptions(){
-        printStream = mock(PrintStream.class);
-        mainMenu = new MainMenu(printStream);
-        mainMenu.listOptions();
+        mainMenu.displayListOptions();
         verify(printStream).println("1 - View All Players");
+        verify(printStream).println("2 - Search");
     }
 
-
-    @Test
-    public void shouldPrintAllPlayers() throws IOException {
-        printStream = mock(PrintStream.class);
-        mainMenu = new MainMenu(printStream);
-        mainMenu.listPlayers();
-        verify(printStream).println("Name: line1Team:  team1Number:  num1Age : age100");
-    }
 }

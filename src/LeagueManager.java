@@ -1,14 +1,35 @@
-import java.lang.reflect.Array;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.util.ArrayList;
 
-/**
- * Created by thoughtworker on 1/16/14.
- */
 public class LeagueManager {
-    public Array roster;
+    private final PrintStream printStream;
+    public ArrayList<Player> roster;
 
-    public LeagueManager(Array roster){
-        this.roster = roster;
+    public LeagueManager(PrintStream printStream){
+        this.printStream = printStream;
     }
 
 
+    public void createRoster() throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader("roster.txt"));
+        InputReader inputReader = new InputReader(reader, printStream);
+        roster = inputReader.getRoster();
+    }
+    public void listPlayers() {
+        for(Player player: roster){
+            printStream.print(roster.size());
+            printStream.println(player.toString());
+        }
+    }
+
+    public void findPlayer(String line) {
+        for(Player player: roster){
+            if(player.name == line);{
+            printStream.println(player.toString());
+            }
+        }
+    }
 }
