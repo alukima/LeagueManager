@@ -26,10 +26,13 @@ public class LeagueManager {
         }
     }
 
-    public void findPlayer(String line) {
+    public void findPlayer(String line, String number) {
         for(Player player : roster)
-            if (player.name.equals(line)){
+            if (player.name.equals(line) && player.number.equals(number)){
                 printStream.println(player.toString());
             }
+    }
+
+    public void ReturnLeague() {
     }
 }

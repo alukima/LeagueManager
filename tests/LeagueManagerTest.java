@@ -22,15 +22,17 @@ public class LeagueManagerTest {
     @Test
     public void shouldPrintAllPlayers() throws IOException {
         leagueManager.listPlayers();
-        verify(printStream).println("Name: line2Team:  team2Number:  num2Age : age100");
+        verify(printStream).println("Name: line1 Team: team1 Number: num1 Age :age100");
     }
 
     @Test
-    public void shouldReturnPlayerIfNameIsSearched(){
-        leagueManager.findPlayer("line1");
-        verify(printStream).println("Name: line1Team:  team1Number:  num1Age : age100");
-
-
+    public void shouldReturnPlayerIfNameandNumberAreSearched(){
+        leagueManager.findPlayer("line1", "num1");
+        verify(printStream).println("Name: line1 Team: team1 Number: num1 Age :age100");
     }
 
+    @Test
+    public void shouldReturnCoachesAndPlayers(){
+        leagueManager.ReturnLeague();
+    }
 }

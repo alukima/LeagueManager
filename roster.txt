@@ -1,2 +1,2 @@
-line1, team1, num1, age100
-line2, team2, num2, age100
+line1,team1,num1,age100
+line2,team2,num2,age100

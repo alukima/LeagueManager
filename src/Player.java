@@ -16,6 +16,6 @@ public class Player {
 
     @Override
     public String toString(){
-        return "Name: " + name + "Team: " +team + "Number: " + number + "Age :" +age;
+        return "Name: " + name + " Team: " +team + " Number: " + number + " Age :" +age;
     }
 }
